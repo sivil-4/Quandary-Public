@@ -27,7 +27,8 @@ parser code {:
 
 :};
 
-terminal PLUS, MINUS, LPAREN, RPAREN;
+terminal LPAREN, RPAREN, RETURN, SEMIC;
+terminal PLUS, MINUS, TIMES;
 terminal Long    INTCONST;
 
 non terminal Program         program;
@@ -35,6 +36,7 @@ non terminal Expr            expr;
 non terminal BinaryExpr      binaryExpr;
 
 precedence left PLUS, MINUS;
+precedence left TIMES;
 
 start with program;
 
