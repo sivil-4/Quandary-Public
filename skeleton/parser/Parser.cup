@@ -42,6 +42,8 @@ start with program;
 
 program ::= expr:e
             {: RESULT = new Program(e, loc(eleft, eright)); :}
+         |  RETURN expr:e SEMIC
+            {: RESULT = new Program(e, loc(eleft, eright)); :}
          ;
 
 expr ::= INTCONST:c
