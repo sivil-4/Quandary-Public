@@ -52,6 +52,8 @@ expr ::= INTCONST:c
          {: RESULT = e; :}
       |  LPAREN expr:e RPAREN
          {: RESULT = e; :}
+      |  MINUS expr:e
+         {: RESULT = new UnaryMinusExpr(e, loc(eleft, eright)):}
       ;
 
 binaryExpr ::= expr:e1 PLUS expr:e2
