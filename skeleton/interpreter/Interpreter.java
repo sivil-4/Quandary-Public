@@ -108,7 +108,7 @@ public class Interpreter {
     Object evaluate(Expr expr) {
         if (expr instanceof ConstExpr) {
             return ((ConstExpr)expr).getValue();
-        } else if (expr instanceof BinaryExpr) {
+        } else if (expr instanceof UnaryMinusExpr) {
             UnaryMinusExpr uexpr = (UnaryMinusExpr)expr;
             return -(Long)evaluate(uexpr.getExpr());
         } else if (expr instanceof BinaryExpr) {
